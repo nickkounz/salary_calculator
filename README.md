@@ -1,7 +1,7 @@
 # Salary Calculator
 Generate the payslip based on given csv.
 ## The challenge 
-The app is design to get the input from the following and generate the below output.
+The app is designed to get the input and generate the below output.
 
 * Input
 ```
@@ -30,15 +30,16 @@ The tax table is from ATO: http://www.ato.gov.au/content/12333.htm
 ```
 
 ## The idea
-* Write a function for each output element. So that each function can be re-used and maintained.
-* Rather than use the comparisions between the income and the tax brackets, I decide to use python bisect based on Bisection Algorithm to find the income within the brackets in a much effcient way.
-* Because csv is the file type that the app is going to get input from, So the app needs to handle the Type, Value Errors from the source csv.
+* Write a function for each output element. So that each function can be re-used and maintained seperately.
+* Rather than use the comparisions between the income and the tax brackets, I decide to use python bisect based on Bisection Algorithm to find the income within the brackets in a much efficient way.
+* Because we are dealing with the csv type source, so the app needs to handle the Type, Value Errors from the source csv.
 
 ## Run the Application
 
 ### Prerequisite
 You should be able to run the app on all platforms, such as Windows, Linux and Mac OS. Just to make sure you have docker installed.
 ### Preparation
+You can choose either copy the git repo and build the image yourself or pull it straight from the docker hub.
 * Build the image yourself
 ```
 docker build -t nickkounz/calculation:1.0 .
@@ -48,7 +49,7 @@ docker build -t nickkounz/calculation:1.0 .
 docker pull nickkounz/calculation:1.0
 ```
 ### Calculate the salary
-* Stand up a container
+* Stand up the container
 ```
 docker run -it --rm --name=python_calculator nickkounz/calculation:1.0 sh
 ```
@@ -73,4 +74,10 @@ There 3 test functions
 Ran 3 tests in 0.001s
 
 OK
+```
+
+## Exit
+Once finished just exit the container and it will be removed after the exit.
+```
+exit
 ```
