@@ -81,7 +81,6 @@ def calc_super(salary, super_rate):
 
 
 if __name__ == "__main__":
-    #print(calc_monthly_tax(-5))
     with open ('input.csv', 'r') as csvfile:
         csv_reader = csv.reader(csvfile, delimiter=',')
         for row in csv_reader:
